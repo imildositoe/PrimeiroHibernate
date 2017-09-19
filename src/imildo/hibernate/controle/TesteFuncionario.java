@@ -27,14 +27,8 @@ public class TesteFuncionario {
         caixa.setEstadoCivil(EstadoCivil.SOLTEIRO);
         caixa.setDataNascimento(new Date());
 
-        SessionFactory sessionFactory = new Configuration().configure("imildo/hibernate/controle/hibernate.cfg.xml").buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-
 //        session.save(director);
 //        session.save(caixa);
-
-        session.getTransaction().commit();
 
         readCaixa().forEach(c -> {
             System.out.println(c);
@@ -43,8 +37,6 @@ public class TesteFuncionario {
         readDirector().forEach(d -> {
             System.out.println(d);
         });
-        
-        session.close();
     }
 
     private static boolean create(Object object) {
@@ -52,7 +44,7 @@ public class TesteFuncionario {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         
-        
+        session.save(object);
         return true;
     }
     
@@ -94,5 +86,13 @@ public class TesteFuncionario {
         
         ArrayList<Director> arrayList = (ArrayList<Director>) session.createCriteria(Director.class).list();
         return arrayList;
+    }
+    
+    private static Session session() {
+        SessionFactory s = new Configuration().configure("imildo/hibernate/controle/hibernate.cfg.xml").buildSessionFactory();
+        Session session = s.openSession();
+        session.beginTransaction();
+        
+        return session;
     }
 }
