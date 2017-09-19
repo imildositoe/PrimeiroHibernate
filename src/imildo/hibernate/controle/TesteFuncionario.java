@@ -39,11 +39,10 @@ public class TesteFuncionario {
         readCaixa().forEach(c -> {
             System.out.println(c);
         });
-
-        for (Director d : readDirector()) {
-            System.out.println(d);
-        }
         
+        readDirector().forEach(d -> {
+            System.out.println(d);
+        });
         
         session.close();
     }
