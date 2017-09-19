@@ -47,9 +47,9 @@ Contributor(s):
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password"/>
     <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.format_sql">false</property>
+    <property name="hibernate.format_sql">true</property>
     <property name="hbm2ddl.auto">update</property>
-    <mapping class="imildo.hibernate.modelo.Caixa"/>
-    <mapping class="imildo.hibernate.modelo.Director"/>
+    <mapping class="imildo.hibernate.modelo.pessoa.Caixa"/>
+    <mapping class="imildo.hibernate.modelo.pessoa.Director"/>
   </session-factory>
 </hibernate-configuration>

@@ -1,4 +1,4 @@
-package imildo.hibernate.modelo;
+package imildo.hibernate.modelo.pessoa;
 
 /**
  *

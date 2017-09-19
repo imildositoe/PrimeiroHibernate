@@ -1,4 +1,4 @@
-package imildo.hibernate.modelo;
+package imildo.hibernate.modelo.pessoa;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -73,6 +73,9 @@ public class Director {
     public void setEstadoCivil(EstadoCivil estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Director{" + "id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", estadoCivil=" + estadoCivil + '}';
+    }
 }
