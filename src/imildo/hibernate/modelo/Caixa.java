@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -44,6 +45,7 @@ public class Caixa {
         this.nome = nome;
     }
 
+    @Transient
     public Integer getIdade() {
         return idade;
     }
